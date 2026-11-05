@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-hairline: #E8E6E1;
+  --color-ink: #1E293B;
+  --color-ink-muted: #526071;
+
+  --color-pastel-lavender: #EFEBF9;
+  --color-pastel-lavender-ink: #4C3D75;
+  --color-pastel-mint: #E6F4EE;
+  --color-pastel-mint-ink: #245E46;
+  --color-pastel-peach: #FDEEE8;
+  --color-pastel-peach-ink: #8F3D22;
+  --color-pastel-sky: #E6F1FC;
+  --color-pastel-sky-ink: #285385;
+  --color-pastel-butter: #FDF6E2;
+  --color-pastel-butter-ink: #7A5B12;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle pastel range slider */
+input[type="range"].nudge-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: #EAE8E3;
+  outline: none;
+}
+
+input[type="range"].nudge-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4C3D75;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px rgba(30, 41, 59, 0.2);
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"].nudge-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}

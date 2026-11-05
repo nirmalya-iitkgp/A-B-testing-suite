@@ -1,0 +1,6 @@
+{
+  "name": "NudgeLab",
+  "description": "Interactive behavioral economics and product nudge simulator powered by EAST, Theory of Planned Behavior (TPB), Elaboration Likelihood Model (ELM), and probabilistic agent-based adoption curves.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
