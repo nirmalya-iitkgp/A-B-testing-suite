@@ -8,6 +8,10 @@ import {
   sanitizeConfig,
   sanitizeLabel,
 } from './behavioralModel';
+import {
+  auditOnboardingStream,
+  DEFAULT_ONBOARDING_STEPS,
+} from './frictionAudit';
 import { BASELINE_CONFIG, PRESET_SCENARIOS } from './presets';
 
 describe('Behavioral Engine — Blue-Pill Functional Tests', () => {
@@ -101,3 +105,36 @@ describe('Security & Boundary — Red-Pill Adversarial Tests', () => {
     assert.ok(Number.isFinite(sim.summaryA.finalAdoptionPct));
   });
 });
+
+describe('Onboarding Friction Audit — Dual-Process, Sweller & Fogg Tests', () => {
+  it('flags forced System 2 spikes and calculates cumulative reach', () => {
+    const result = auditOnboardingStream(DEFAULT_ONBOARDING_STEPS);
+    assert.equal(result.system2SpikeCount, 1);
+    assert.ok(result.streamFrictionScore > 0 && result.streamFrictionScore <= 100);
+    assert.ok(result.completionRatePct > 0 && result.completionRatePct < 100);
+    assert.equal(result.steps.length, DEFAULT_ONBOARDING_STEPS.length);
+  });
+
+  it('handles empty or hostile step arrays safely without NaN', () => {
+    const emptyAudit = auditOnboardingStream([]);
+    assert.equal(emptyAudit.steps.length, DEFAULT_ONBOARDING_STEPS.length);
+
+    const hostileAudit = auditOnboardingStream([
+      {
+        id: '<script>',
+        screenName: '<img src=x onerror=alert(1)>',
+        intrinsicLoad: NaN,
+        extrinsicLoad: 999,
+        germaneLoad: -50,
+        forcedSystem2: true,
+        motivation: Infinity,
+        ability: -10,
+        promptClarity: 50,
+      },
+    ]);
+    assert.ok(Number.isFinite(hostileAudit.streamFrictionScore));
+    assert.ok(Number.isFinite(hostileAudit.completionRatePct));
+    assert.ok(!hostileAudit.steps[0].step.screenName.includes('<'));
+  });
+});
+

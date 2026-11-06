@@ -1,7 +1,7 @@
 import React from 'react';
 import { RotateCw } from 'lucide-react';
 
-export type ActiveTab = 'simulator' | 'compare' | 'agents' | 'presets';
+export type ActiveTab = 'simulator' | 'compare' | 'agents' | 'friction' | 'presets';
 
 interface TopBarProps {
   activeTab: ActiveTab;
@@ -13,6 +13,7 @@ const NAV_ITEMS: { id: ActiveTab; label: string }[] = [
   { id: 'simulator', label: 'Simulator' },
   { id: 'compare', label: 'Compare A vs B' },
   { id: 'agents', label: 'Test Crowd' },
+  { id: 'friction', label: 'Friction Audit' },
   { id: 'presets', label: 'Ideas' },
 ];
 

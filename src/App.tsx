@@ -16,6 +16,7 @@ import { ABCompareView } from './components/ABCompareView';
 import { PresetsView } from './components/PresetsView';
 import { Tooltip } from './components/Tooltip';
 import { PlainLanguageDrawer } from './components/PlainLanguageDrawer';
+import { FrictionAuditView } from './components/FrictionAuditView';
 
 const STORAGE_KEY = 'nudgelab_custom_ideas_v1';
 
@@ -226,6 +227,15 @@ export default function App() {
 
             {activeTab === 'agents' && (
               <AgentGridView agents={simulation.agentsA} />
+            )}
+
+            {activeTab === 'friction' && (
+              <FrictionAuditView
+                onApplyFrictionToSimulator={(score) => {
+                  handleConfigChange({ ...activeConfig, frictionCost: score });
+                  setActiveTab('simulator');
+                }}
+              />
             )}
 
             {activeTab === 'presets' && (

@@ -21,6 +21,9 @@
 4. **Probabilistic Agent-Based Engine**
    - Simulates $250\text{–}800$ heterogeneous consumer agents across four segments (*Innovator*, *Early Adopter*, *Pragmatist*, *Skeptic*) over 12 weeks using a deterministic seeded PRNG (`mulberry32`) for reproducible A/B comparisons.
 
+5. **Dual-Process Cognitive Friction & Onboarding Audit Studio**
+   - Evaluates multi-screen onboarding flows against **Sweller’s Cognitive Load Theory** (*Intrinsic*, *Extrinsic*, *Germane*), **Kahneman’s Dual-Process Theory** (*System 1* autopilot vs. forced *System 2* spikes), and the **Fogg Behavior Model** ($B = M \times A \times P$), calculating a stream-level **Cognitive Friction Score** that syncs directly into the simulator.
+
 ---
 
 ## Running & Testing

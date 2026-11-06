@@ -80,3 +80,32 @@ export interface PresetScenario {
   variantA: InterventionConfig;
   variantB: InterventionConfig;
 }
+
+export interface OnboardingStep {
+  id: string;
+  screenName: string;
+  intrinsicLoad: number; // Task complexity (0 - 100)
+  extrinsicLoad: number; // UI clutter / confusion (0 - 100)
+  germaneLoad: number; // Helpful guidance / clarity (0 - 100)
+  forcedSystem2: boolean; // Requires slow analytical decision
+  motivation: number; // Fogg M (0 - 100)
+  ability: number; // Fogg A (0 - 100)
+  promptClarity: number; // Fogg P (0 - 100)
+}
+
+export interface StepAuditResult {
+  step: OnboardingStep;
+  cognitiveFriction: number; // 0 - 100
+  foggScore: number; // 0 - 100
+  isSystem2Spike: boolean;
+  stepPassRatePct: number; // 0 - 100
+  cumulativeReachPct: number; // 0 - 100
+}
+
+export interface StreamAuditResult {
+  streamFrictionScore: number; // 0 - 100
+  completionRatePct: number; // 0 - 100
+  system2SpikeCount: number;
+  avgFoggScore: number; // 0 - 100
+  steps: StepAuditResult[];
+}

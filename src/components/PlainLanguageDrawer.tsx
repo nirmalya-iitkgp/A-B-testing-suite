@@ -92,6 +92,27 @@ const GLOSSARY: GlossaryEntry[] = [
       'Every extra click, password field, or slow page load that makes customers give up halfway.',
     badgeBg: 'bg-[#FDEEE8] text-[#8F3D22]',
   },
+  {
+    term: 'System 1 vs. System 2 (Kahneman)',
+    plainTitle: 'Autopilot vs. Deep Thinking',
+    businessMeaning:
+      'System 1 is fast, effortless autopilot (like clicking "Continue with Google"). System 2 is slow, tiring math or decision-making. Forcing System 2 too early causes users to quit.',
+    badgeBg: 'bg-[#EFEBF9] text-[#4C3D75]',
+  },
+  {
+    term: 'Cognitive Load (Sweller)',
+    plainTitle: 'Brainpower Budget',
+    businessMeaning:
+      'Users have limited mental energy. Intrinsic Load is task difficulty, Extrinsic Load is screen clutter, and Germane Load is helpful guidance.',
+    badgeBg: 'bg-[#E6F1FC] text-[#285385]',
+  },
+  {
+    term: 'Fogg Behavior Model (B = MAP)',
+    plainTitle: 'Motivation × Ability × Prompt',
+    businessMeaning:
+      'A user only completes a step when they want to do it (Motivation), it feels easy (Ability), and they see a clear button (Prompt) at the same time.',
+    badgeBg: 'bg-[#E6F4EE] text-[#245E46]',
+  },
 ];
 
 export const PlainLanguageDrawer: React.FC<PlainLanguageDrawerProps> = ({

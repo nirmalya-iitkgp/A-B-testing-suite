@@ -166,4 +166,10 @@ export const TOOLTIPS: Record<string, string> = {
   kpiLift: 'Extra Growth: How many more users you get compared to doing nothing (Normal Sign-Up).',
   kpiDesire: 'Desire to Try: How strongly users want to say yes (0–100) based on ease, appeal, and social proof.',
   kpiLoyalty: 'Long-Term Loyalty: Share of users convinced by real value rather than temporary hype.',
+  intrinsicLoad: 'Task Complexity: How naturally hard the topic is to understand, like pricing math or API setup. (Sweller: Intrinsic Load)',
+  extrinsicLoad: 'Screen Clutter: Confusing layout, jargon, or extra fields that waste brainpower. (Sweller: Extrinsic Load)',
+  germaneLoad: 'Helpful Guidance: Clear examples, tooltips, or smart defaults that help users learn fast. (Sweller: Germane Load)',
+  forcedSystem2: 'Forced Deep Thinking: Requires slow, analytical brainpower instead of fast autopilot. Causes drop-off spikes! (Kahneman: System 2)',
+  foggMAP: 'Action Readiness (B=MAP): Users only act when Motivation, Ability (ease), and a clear Prompt happen together. (Fogg Model)',
+  streamFriction: 'Overall Brain Effort: Average mental friction across all screens. Lower = smoother autopilot flow.',
 };
